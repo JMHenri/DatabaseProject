@@ -5,5 +5,9 @@
     "express": "^4.17.1",
     "live-server": "^1.2.1",
     "nedb": "^1.8.0"
+  },
+  "scripts":{
+    "develop": "node live-server.js",
+    "serve": "node main.js"
   }
 }

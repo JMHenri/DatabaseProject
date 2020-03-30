@@ -6,17 +6,69 @@
   <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="public/css/all.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="public/js/index.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 
 <body>
-  <div class="container">
-    <div class="row">
-      
+  <style>
+    textarea {
+      width:100%;
+      box-sizing: border-box;
+    }
+    .citizenList {
+      height: 14em;
+    }
+  </style>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12">
+              <h4>Enter report information.</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <textarea id="ReportText" rows="20" cols="50">
+                  Enter your report here. Click save when complete.
+                </textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12">
+              <h4>Citizens Affected:</h4>
+            </div>
+            <div class="col-12 citizenList">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h4>Citizen Search:</h4>
+              <label>First Name</label>
+              <input id="citizenSearch" type="text"/>
+              <button id="citizenSearchButton">search</button>
+            </div>
+            <div class="col-12 citizenList">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button id="Submit Report">Submit Report</button>
+      </div>
     </div>
-  </div>
 </body>
+
 </html>
