@@ -1,0 +1,3 @@
+{"UserID":"MMarie","CitizenID":"99667","Birthday":"05/15/1990","Title":"Project Supervisor","Access_Level":2,"Password":"password","First_Name":"Musie","Last_Name":"Marie","Supervises":["JHenri"],"_id":"1ZHl22FKk3zwVwIh"}
+{"UserID":"MMega","CitizenID":"67887","Birthday":"01/01/1998","Title":"intern","Access_Level":1,"Password":"password","First_Name":"Marcus","Last_Name":"Mega","Supervises":[],"_id":"GStMUQnNisvXQNMI"}
+{"UserID":"JHenri","CitizenID":"12345","Birthday":"06/13/1994","Title":"DBADMIN","Access_Level":3,"Password":"password","First_Name":"Jacob","Last_Name":"Henri","Supervises":["MMega"],"_id":"QeNdTQbIqCA5Wgug"}

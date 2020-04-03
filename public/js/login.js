@@ -1,12 +1,15 @@
-$('#loginForm').submit(function(e){
-  alert('df')
-  e.preventDefault();
-  $.ajax({
-      url:'/api/login',
-      type:'post',
-      data:$('#myForm').serialize(),
-      success:function(){
-          //whatever you wanna do after the form is successfully submitted
-      }
+$(()=>{
+  $('#loginForm').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:'/api/login',
+        type:'post',
+        data:$('#loginForm').serialize(),
+        success:function(res){
+          if(res == true) {
+            document.location = "/dashboard.html";
+          }
+        }
+    });
   });
-});
+})

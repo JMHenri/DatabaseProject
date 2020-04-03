@@ -6,11 +6,9 @@
   <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="public/css/all.css">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="public/js/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="public/js/create-report.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
@@ -22,53 +20,60 @@
 <body>
   <style>
     textarea {
-      width:100%;
+      width: 100%;
       box-sizing: border-box;
     }
-    .citizenList {
+
+    .citizenList, .citizensInvolved {
       height: 14em;
     }
   </style>
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div class="row">
-            <div class="col-12">
-              <h4>Enter report information.</h4>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12">
+            <h4>Enter report information.</h4>
           </div>
-          <div class="row">
-            <div class="col-12">
-                <textarea id="ReportText" rows="20" cols="50">
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="ReportText" rows="20" cols="50">
                   Enter your report here. Click save when complete.
                 </textarea>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="row">
-            <div class="col-12">
-              <h4>Citizens Affected:</h4>
-            </div>
-            <div class="col-12 citizenList">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <h4>Citizen Search:</h4>
-              <label>First Name</label>
-              <input id="citizenSearch" type="text"/>
-              <button id="citizenSearchButton">search</button>
-            </div>
-            <div class="col-12 citizenList">
-            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <button id="Submit Report">Submit Report</button>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12">
+            <h4>Citizens Involved:</h4>
+          </div>
+          <div class="col-12">
+            <div class="row citizensInvolved">
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>Citizen Search:</h4>
+            <label>First Name</label>
+            <input id="citizenSearchBox" type="text" />
+            <button id="citizenSearch">search</button>
+          </div>
+          <div class="col-12">
+            <div class="row citizenList">
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <button id="Submit Report">Submit Report</button>
+    </div>
+  </div>
 </body>
 
 </html>

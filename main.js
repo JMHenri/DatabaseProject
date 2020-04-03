@@ -2,14 +2,27 @@ const express = require('express');
 const app = express();
 const port = 8080;
 const Datastore = require('nedb');
-const db = new Datastore({
-  filename: './datastore',
+const fs = require('fs');
+const API = require('./server/api');
+
+app.use(express.json());
+
+let DB = {};
+DB.employee = new Datastore({
+  filename: './data/employee',
   autoload: true
 });
-const fs = require('fs');
+DB.report = new Datastore({
+  filename: './data/report',
+  autoload: true
+});
+DB.citizen = new Datastore({
+  filename: './data/citizen',
+  autoload: true
+});
 
 try {
-  if (fs.existsSync('./datastore')) {} else {
+  if (fs.existsSync('./data/employee')) {} else {
     populateDataStore();
   }
 } catch (err) {
@@ -23,9 +36,23 @@ app.listen(port, () => {
   console.log("App listening on port : ", port);
 });
 
+API(app, DB);
 
 
 function populateDataStore() {
   const doc = JSON.parse(fs.readFileSync('./data/DATA.json', 'UTF-8'));
-  db.insert(doc);
+
+  const employee = doc.Employee;
+  const citizenReport = doc.Citizen_Report;
+  const citizen = doc.Citizen;
+
+  for(let i of employee){
+    DB.employee.insert(i);
+  }
+  for(let i of citizenReport){
+    DB.report.insert(i);
+  }
+  for(let i of citizen){
+    DB.citizen.insert(i);
+  }
 }
