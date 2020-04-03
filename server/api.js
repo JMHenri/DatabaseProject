@@ -20,6 +20,11 @@ module.exports = function API(app, DB){
       }
     })
   })
+  app.post('/api/insertReport', async (req,res) => {
+    const doc = req.data;
+    await DB.report.insert(doc);
+    res(true);
+  })
   app.get('/api/myInfo', (req, res) => {
     res.send(global.app.user);
   })
