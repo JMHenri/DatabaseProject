@@ -20,10 +20,6 @@ module.exports = function API(app, DB){
       }
     })
   })
-
-  app.get('/api/myQueue', () => {
-
-  });
   app.get('/api/myInfo', (req, res) => {
     res.send(global.app.user);
   })
@@ -45,14 +41,16 @@ module.exports = function API(app, DB){
   })
   app.get('/api/ignoreDoc', (req,res) => {
     const Document_ID = req.query.Document_ID;
-    DB.report.find({Document_ID: Document_ID}, (err, citizens) => {
-      res.send(citizens);
+    DB.report.update({Document_ID: Document_ID}, {Reviewed: true}, (err, Doc) => {
+      res(true);
     });
   })
-  app.get('/api/escalateDoc', (req,res) => {
-    const Document_ID = req.query.Document_ID;
-    DB.report.find({First_name: fname}, (err, citizens) => {
-      res.send(citizens);
+  app.get('/api/escalateDoc', async (req,res) => {
+    const report = await DB.report.find({Document_ID: req.query.Document_ID})[0];
+    //get all citizens whose ID's are included in the report.
+    const citizens = await DB.citizen.find({$where: function(){ return report.Citizen_ID.includes(this.Citizen_ID)}})
+    citizens.forEach(element => {
+      await DB.citizen.update({Citizen_ID: element.Citizen_ID}, {Threat_Level: (element.Threat_Level + 1)})
     });
   })
 }

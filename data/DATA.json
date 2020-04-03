@@ -36,7 +36,7 @@
   "Citizen_Report": [{
       "Document_ID": "a74fjz",
       "Document_Title": "Local man speaks about disgruntlement with DoubleGov.",
-      "Citizen_ID": "66",
+      "Citizen_ID": ["66"],
       "Access_Level": 1,
       "Text": "Agent Jeremy Mole noticed Local Man (ID 661j) speaking in a clearly disgruntled manner on Tuesday, March 22. Cited an anger at the fact that \"the (expletive) political candidates are chosen by the supreme leader.\" ",
       "Reviewed": false
@@ -44,7 +44,7 @@
     {
       "Document_ID": "a74njz",
       "Document_Title": "Several farmers found discussing possible co-op.",
-      "Citizen_ID": "79",
+      "Citizen_ID": ["79"],
       "Access_Level": 2,
       "Text": "Agent (Redacted) noticed several farmers coalescing in a hidden location (coordinates attached) on Wednesdays. After a succesful request for field-recording equipment, it seems that Citizen 1055x5 and bbPp4 are interested in \"Getting the (expletive) out of this (expletive) country.\" ",
       "Reviewed": false
@@ -52,7 +52,7 @@
     {
       "Document_ID": "aq74jz",
       "Document_Title": "Activity report: Incident 668, Hotel Hacker.",
-      "Citizen_ID": "24",
+      "Citizen_ID": ["24"],
       "Access_Level": 3,
       "Text": "Agent (Redacted) has infiltrated incident 668 and determined the source of the hack to be citizen 885ui.",
       "Reviewed": false
@@ -63,25 +63,29 @@
       "Citizen_ID":"24",
       "First_Name":"Bobby",
       "Last_Name":"Burgers",
-      "Greatest_Fear":"Rats"
+      "Greatest_Fear":"Rats",
+      "Threat_level": 0
     },
     {
       "Citizen_ID":"26",
       "First_Name":"Bobby",
       "Last_Name":"Marks",
-      "Greatest_Fear":"Markers"
+      "Greatest_Fear":"Markers",
+      "Threat_level": 1
     },
     {
       "Citizen_ID":"66",
       "First_Name":"Sarah",
       "Last_Name":"Sandy",
-      "Greatest_Fear":"Heights"
+      "Greatest_Fear":"Heights",
+      "Threat_level": 3
     },
     {
       "Citizen_ID":"79",
       "First_Name":"Fiona",
       "Last_Name":"Milkshake",
-      "Greatest_Fear":"Spiders"
+      "Greatest_Fear":"Spiders",
+      "Threat_level": 2
     }
   ]
 }
